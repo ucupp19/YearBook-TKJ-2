@@ -1,10 +1,42 @@
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
+import { useState, useEffect } from "react";
 import { galleryImages } from "../data/galleryImages";
 
 const GallerySection = () => {
   // Create duplicated arrays for continuous scrolling effect
   const firstRowImages = [...galleryImages.slice(0, 5), ...galleryImages.slice(0, 5)];
   const secondRowImages = [...galleryImages.slice(5, 10), ...galleryImages.slice(5, 10)];
+  
+  // Animation controls for both rows
+  const firstRowControls = useAnimationControls();
+  const secondRowControls = useAnimationControls();
+  
+  // State to track hover status
+  const [isFirstRowHovered, setIsFirstRowHovered] = useState(false);
+  const [isSecondRowHovered, setIsSecondRowHovered] = useState(false);
+  
+  // Animation functions
+  const startAnimation = (controls: ReturnType<typeof useAnimationControls>) => {
+    controls.start({
+      x: "-50%",
+      transition: {
+        repeat: Infinity,
+        duration: 30,
+        ease: "linear",
+      }
+    });
+  };
+  
+  const pauseAnimation = (controls: ReturnType<typeof useAnimationControls>) => {
+    // This pauses the animation at its current position
+    controls.stop();
+  };
+  
+  // Start animations when component mounts
+  useEffect(() => {
+    startAnimation(firstRowControls);
+    startAnimation(secondRowControls);
+  }, []);
 
   return (
     <section id="gallery" className="py-20 bg-white px-4">
@@ -19,15 +51,21 @@ const GallerySection = () => {
           Gallery
         </motion.h2>
 
-        <div className="gallery-container mb-8">
+        <div 
+          className="gallery-container mb-8"
+          onMouseEnter={() => {
+            setIsFirstRowHovered(true);
+            pauseAnimation(firstRowControls);
+          }}
+          onMouseLeave={() => {
+            setIsFirstRowHovered(false);
+            startAnimation(firstRowControls);
+          }}
+        >
           <motion.div
             className="gallery-row"
-            animate={{ x: "-50%" }}
-            transition={{
-              repeat: Infinity,
-              duration: 30,
-              ease: "linear",
-            }}
+            animate={firstRowControls}
+            initial={{ x: 0 }}
           >
             {firstRowImages.map((image, index) => (
               <div key={`row1-${index}`} className="px-2">
@@ -41,15 +79,21 @@ const GallerySection = () => {
           </motion.div>
         </div>
 
-        <div className="gallery-container">
+        <div 
+          className="gallery-container"
+          onMouseEnter={() => {
+            setIsSecondRowHovered(true);
+            pauseAnimation(secondRowControls);
+          }}
+          onMouseLeave={() => {
+            setIsSecondRowHovered(false);
+            startAnimation(secondRowControls);
+          }}
+        >
           <motion.div
             className="gallery-row"
-            animate={{ x: "-50%" }}
-            transition={{
-              repeat: Infinity,
-              duration: 30,
-              ease: "linear",
-            }}
+            animate={secondRowControls}
+            initial={{ x: 0 }}
           >
             {secondRowImages.map((image, index) => (
               <div key={`row2-${index}`} className="px-2">
