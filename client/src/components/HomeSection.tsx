@@ -46,26 +46,39 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen pt-24 flex items-center justify-center bg-black text-white px-4 relative overflow-hidden animate-fadeIn"
+      className="min-h-screen pt-24 flex items-center justify-center bg-black text-white px-4 relative overflow-hidden"
     >
       <div ref={particlesContainerRef} className="particles-container"></div>
       
       <div className="container mx-auto text-center relative z-10">
-        <h1 className="text-5xl md:text-7xl font-decorative font-bold mb-6 bg-gradient-to-r from-gray-200 to-white text-transparent bg-clip-text animate-scaleIn">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-heading font-bold mb-6 bg-gradient-to-r from-gray-200 to-white text-transparent bg-clip-text"
+        >
           XII - TKJ 2
-        </h1>
-        <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300 animate-slideUp delay-300">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300"
+        >
           Welcome to our class showcase. We are a group of passionate Computer and Network Engineering students.
-        </p>
-        <button
+        </motion.p>
+        <motion.button
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           onClick={() => {
             const gallerySection = document.getElementById("gallery");
             if (gallerySection) gallerySection.scrollIntoView({ behavior: "smooth" });
           }}
-          className="inline-block bg-white hover:bg-gray-200 text-black py-3 px-8 rounded-full font-semibold transition duration-300 shadow-lg animate-slideUp delay-500"
+          className="inline-block bg-white hover:bg-gray-200 text-black py-3 px-8 rounded-full font-semibold transition duration-300 shadow-lg"
         >
           View Our Gallery
-        </button>
+        </motion.button>
       </div>
     </section>
   );
