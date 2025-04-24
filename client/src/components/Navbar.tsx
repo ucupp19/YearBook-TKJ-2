@@ -36,6 +36,14 @@ const Navbar = () => {
               </li>
               <li>
                 <button
+                  onClick={() => scrollToSection("teacher")}
+                  className="hover:text-gray-300 transition duration-300"
+                >
+                  Teacher
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => scrollToSection("gallery")}
                   className="hover:text-gray-300 transition duration-300"
                 >
@@ -53,13 +61,21 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="sm:hidden">
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-3">
               <li>
                 <button
                   onClick={() => scrollToSection("home")}
                   className="hover:text-gray-300 transition duration-300 text-sm"
                 >
                   Home
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection("teacher")}
+                  className="hover:text-gray-300 transition duration-300 text-sm"
+                >
+                  Teacher
                 </button>
               </li>
               <li>
