@@ -7,19 +7,13 @@ const GallerySection = () => {
   const secondRowImages = [...galleryImages.slice(5, 10), ...galleryImages.slice(5, 10)];
 
   return (
-    <section id="gallery" className="py-20 bg-white px-4">
+    <section id="gallery" className="py-20 bg-black px-4 animate-fadeIn">
       <div className="container mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-4xl font-heading font-bold text-center mb-12 text-black"
-        >
+        <h2 className="text-4xl font-decorative font-bold text-center mb-12 text-white animate-slideUp">
           Gallery
-        </motion.h2>
+        </h2>
 
-        <div className="gallery-container mb-8">
+        <div className="gallery-container mb-8 animate-fadeIn delay-300">
           <motion.div
             className="gallery-row"
             animate={{ x: "-50%" }}
@@ -41,7 +35,7 @@ const GallerySection = () => {
           </motion.div>
         </div>
 
-        <div className="gallery-container">
+        <div className="gallery-container animate-fadeIn delay-500">
           <motion.div
             className="gallery-row"
             animate={{ x: "-50%" }}
@@ -49,6 +43,7 @@ const GallerySection = () => {
               repeat: Infinity,
               duration: 30,
               ease: "linear",
+              delay: 0.2, // Slight delay for second row to create staggered effect
             }}
           >
             {secondRowImages.map((image, index) => (
