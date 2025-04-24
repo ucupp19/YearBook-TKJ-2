@@ -14,7 +14,7 @@ const GallerySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl font-heading font-bold text-center mb-12 text-primary"
+          className="text-4xl font-heading font-bold text-center mb-12 text-black"
         >
           Gallery
         </motion.h2>
@@ -34,7 +34,7 @@ const GallerySection = () => {
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="h-48 w-80 object-cover rounded-lg shadow-md"
+                  className="h-48 w-80 object-cover rounded-lg shadow-md grayscale hover:grayscale-0 transition duration-500"
                 />
               </div>
             ))}
@@ -56,7 +56,7 @@ const GallerySection = () => {
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="h-48 w-80 object-cover rounded-lg shadow-md"
+                  className="h-48 w-80 object-cover rounded-lg shadow-md grayscale hover:grayscale-0 transition duration-500"
                 />
               </div>
             ))}
