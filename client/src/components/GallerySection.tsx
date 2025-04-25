@@ -39,14 +39,14 @@ const GallerySection = () => {
   }, []);
 
   return (
-    <section id="gallery" className="py-20 bg-white px-4">
+    <section id="gallery" className="py-20 bg-yellow-50 px-4">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl font-heading font-bold text-center mb-12 text-black"
+          className="text-4xl font-heading font-bold text-center mb-12 text-yellow-600"
         >
           Gallery
         </motion.h2>
@@ -72,7 +72,7 @@ const GallerySection = () => {
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="h-48 w-80 object-cover rounded-lg shadow-md grayscale hover:grayscale-0 transition duration-500"
+                  className="h-48 w-80 object-cover rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-500"
                 />
               </div>
             ))}
@@ -100,7 +100,7 @@ const GallerySection = () => {
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="h-48 w-80 object-cover rounded-lg shadow-md grayscale hover:grayscale-0 transition duration-500"
+                  className="h-48 w-80 object-cover rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-500"
                 />
               </div>
             ))}
