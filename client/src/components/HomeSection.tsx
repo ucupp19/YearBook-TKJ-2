@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-
+import TextPressure from "./animations/TextPressure/TextPressure";
 const HomeSection = () => {
   const particlesContainerRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
@@ -50,36 +50,53 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen pt-24 flex items-center justify-center bg-black text-white px-4 relative overflow-hidden"
+      className="w-full aspect-[16/9 md:aspect-auto min-h-[500px] md:min-h-screen pt-24 flex items-center justify-center bg-black text-white px-4 relative overflow-hidden"
     >
       <div ref={particlesContainerRef} className="particles-container"></div>
       
       <div className="container mx-auto text-center relative z-10">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-heading font-bold mb-6 bg-gradient-to-r from-gray-200 to-white text-transparent bg-clip-text"
-        >
-          XII - TKJ 2
-        </motion.h1>
+      
+      <motion.div
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="flex items-center justify-center text-4xl sm:text-5xl md:text-7xl font-heading font-bold mb-6 min-h-[150px] sm:min-h-[200px] md:min-h-[400px]"
+
+>
+  <TextPressure
+    text="XII - TKJ 2"
+    flex={true}
+    alpha={false}
+    stroke={false}
+    width={true}
+    weight={true}
+    italic={true}
+    textColor="#ffffff"
+    strokeColor="#ff0000"
+    minFontSize={36}
+  />
+</motion.div>
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300"
+          className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300 select-none"
         >
-          Welcome to our class showcase. We are a group of passionate Computer and Network Engineering students.
+          Welcome to our class showcase. We are a Computer and Network Engineering students.
         </motion.p>
         <motion.button
+          aria-label="View our gallery"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           onClick={() => {
             const gallerySection = document.getElementById("gallery");
             if (gallerySection) gallerySection.scrollIntoView({ behavior: "smooth" });
           }}
-          className="inline-block bg-white hover:bg-gray-200 text-black py-3 px-8 rounded-full font-semibold transition duration-300 hover:scale-105 shadow-lg"
+          className="inline-block bg-white hover:bg-gray-200 text-black py-3 px-8 rounded-full font-semibold transition duration-300 hover:scale-105 shadow-lg select-none"
         >
           View Our Gallery
         </motion.button>

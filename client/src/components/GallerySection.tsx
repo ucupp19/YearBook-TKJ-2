@@ -1,112 +1,160 @@
 import { motion, useAnimationControls } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { galleryImages } from "../data/galleryImages";
 
+// Reusable scrolling row component
+const ScrollingRow = ({
+  images,
+  controls,
+  initialX,
+  reverse = false,
+  onImageClick,
+}: {
+  images: typeof galleryImages;
+  controls: ReturnType<typeof useAnimationControls>;
+  initialX: string;
+  reverse?: boolean;
+  onImageClick: (url: string) => void;
+}) => (
+  <div
+    className="gallery-container overflow-hidden mb-8"
+    onMouseEnter={() => controls.stop()}
+    onMouseLeave={() =>
+      controls.start({
+        x: reverse ? "0%" : "-50%",
+        transition: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 30,
+          ease: "linear",
+        },
+      })
+    }
+  >
+    <motion.div className="gallery-row flex" animate={controls} initial={{ x: initialX }}>
+      {images.map((image, index) => (
+        <div key={index} className="px-2 shrink-0">
+          <img
+            src={image.url}
+            alt={image.alt}
+            onClick={() => onImageClick(image.url)}
+            className="h-48 w-80 object-cover rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-500 cursor-pointer select-none"
+          />
+        </div>
+      ))}
+    </motion.div>
+  </div>
+);
+
 const GallerySection = () => {
-  // Create duplicated arrays for continuous scrolling effect
-  const firstRowImages = [...galleryImages.slice(0, 5), ...galleryImages.slice(0, 5)];
-  const secondRowImages = [...galleryImages.slice(5, 10), ...galleryImages.slice(5, 10)];
-  
-  // Animation controls for both rows
+  const [selectedImageUrl, setSelectedImageUrl] = useState<string | null>(null);
+
+  // Duplicate images for infinite scroll
+  const firstRowImages = [...galleryImages.slice(0, 6), ...galleryImages.slice(0, 6)];
+  const secondRowImages = [...galleryImages.slice(6, 12), ...galleryImages.slice(6, 12)];
+  const thirdRowImages = [...galleryImages.slice(12, 18), ...galleryImages.slice(12, 18)];
+
+  // Animation controls for each row
   const firstRowControls = useAnimationControls();
   const secondRowControls = useAnimationControls();
-  
-  // State to track hover status
-  const [isFirstRowHovered, setIsFirstRowHovered] = useState(false);
-  const [isSecondRowHovered, setIsSecondRowHovered] = useState(false);
-  
-  // Animation functions
-  const startAnimation = (controls: ReturnType<typeof useAnimationControls>) => {
-    controls.start({
+  const thirdRowControls = useAnimationControls();
+
+  // Start animations on mount
+  useEffect(() => {
+    firstRowControls.start({
       x: "-50%",
       transition: {
         repeat: Infinity,
-        duration: 30,
+        repeatType: "loop",
+        duration: 100,
         ease: "linear",
-      }
+      },
     });
-  };
-  
-  const pauseAnimation = (controls: ReturnType<typeof useAnimationControls>) => {
-    // This pauses the animation at its current position
-    controls.stop();
-  };
-  
-  // Start animations when component mounts
-  useEffect(() => {
-    startAnimation(firstRowControls);
-    startAnimation(secondRowControls);
+
+    secondRowControls.start({
+      x: "0%",
+      transition: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 100,
+        ease: "linear",
+      },
+    });
+
+    thirdRowControls.start({
+      x: "-50%",
+      transition: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 100,
+        ease: "linear",
+      },
+    });
   }, []);
 
+  // Handler to close modal
+  const closeModal = () => setSelectedImageUrl(null);
+
   return (
-    <section id="gallery" className="py-20 bg-yellow-50 px-4">
+    <section id="gallery" className="py-20 bg-white px-4">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-4xl font-heading font-bold text-center mb-12 text-yellow-600"
+          className="text-4xl font-heading font-bold text-center mb-12 text-black select-none"
         >
           Gallery
         </motion.h2>
 
-        <div 
-          className="gallery-container mb-8"
-          onMouseEnter={() => {
-            setIsFirstRowHovered(true);
-            pauseAnimation(firstRowControls);
-          }}
-          onMouseLeave={() => {
-            setIsFirstRowHovered(false);
-            startAnimation(firstRowControls);
-          }}
-        >
-          <motion.div
-            className="gallery-row"
-            animate={firstRowControls}
-            initial={{ x: 0 }}
-          >
-            {firstRowImages.map((image, index) => (
-              <div key={`row1-${index}`} className="px-2">
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="h-48 w-80 object-cover rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-500"
-                />
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        <ScrollingRow
+          images={firstRowImages}
+          controls={firstRowControls}
+          initialX="0%"
+          onImageClick={setSelectedImageUrl}
+        />
 
-        <div 
-          className="gallery-container"
-          onMouseEnter={() => {
-            setIsSecondRowHovered(true);
-            pauseAnimation(secondRowControls);
-          }}
-          onMouseLeave={() => {
-            setIsSecondRowHovered(false);
-            startAnimation(secondRowControls);
-          }}
-        >
-          <motion.div
-            className="gallery-row"
-            animate={secondRowControls}
-            initial={{ x: 0 }}
-          >
-            {secondRowImages.map((image, index) => (
-              <div key={`row2-${index}`} className="px-2">
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="h-48 w-80 object-cover rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-500"
-                />
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        <ScrollingRow
+          images={secondRowImages}
+          controls={secondRowControls}
+          initialX="-50%"
+          reverse
+          onImageClick={setSelectedImageUrl}
+        />
+
+        <ScrollingRow
+          images={thirdRowImages}
+          controls={thirdRowControls}
+          initialX="0%"
+          onImageClick={setSelectedImageUrl}
+        />
       </div>
+
+      {/* Modal for enlarged image */}
+      {selectedImageUrl && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div
+            className="relative max-w-4xl max-h-full p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <img
+              src={selectedImageUrl}
+              alt="Enlarged"
+              className="max-w-full max-h-[80vh] rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
