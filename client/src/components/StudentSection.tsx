@@ -3,7 +3,7 @@ import { students } from "../data/students";
 
 const StudentSection = () => {
   return (
-    <section id="students" className="py-20 bg-blue-50 px-4">
+    <section id="students" className="py-20 bg-black-50 px-4">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ const StudentSection = () => {
                   className="w-full h-full object-cover object-center rounded hover:scale-110 transition duration-300"
                 />
               </div>
-              <p className="font-medium text-blue-700">{student.name}</p>
+              <p className="font-medium text-black-700">{student.name}</p>
             </motion.div>
           ))}
         </div>

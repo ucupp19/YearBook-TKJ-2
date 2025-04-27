@@ -1,150 +1,150 @@
 export const students = [
   {
-    name: "Ahmad",
+    name: "Adit",
     photoUrl: "https://randomuser.me/api/portraits/men/1.jpg"
   },
   {
-    name: "Sarah",
+    name: "Arifin",
     photoUrl: "https://randomuser.me/api/portraits/women/1.jpg"
   },
   {
-    name: "Budi",
+    name: "Farist",
     photoUrl: "https://randomuser.me/api/portraits/men/2.jpg"
   },
   {
-    name: "Dewi",
+    name: "Arisma",
     photoUrl: "https://randomuser.me/api/portraits/women/2.jpg"
   },
   {
-    name: "Eka",
+    name: "Bernando",
     photoUrl: "https://randomuser.me/api/portraits/men/3.jpg"
   },
   {
-    name: "Fira",
+    name: "Dhava",
     photoUrl: "https://randomuser.me/api/portraits/women/3.jpg"
   },
   {
-    name: "Galih",
+    name: "Dirga",
     photoUrl: "https://randomuser.me/api/portraits/men/4.jpg"
   },
   {
-    name: "Hani",
+    name: "Pasya",
     photoUrl: "https://randomuser.me/api/portraits/women/4.jpg"
   },
   {
-    name: "Irfan",
+    name: "I Putu",
     photoUrl: "https://randomuser.me/api/portraits/men/5.jpg"
   },
   {
-    name: "Jasmine",
+    name: "Ilham",
     photoUrl: "https://randomuser.me/api/portraits/women/5.jpg"
   },
   {
-    name: "Kevin",
+    name: "Irfan",
     photoUrl: "https://randomuser.me/api/portraits/men/6.jpg"
   },
   {
-    name: "Laras",
+    name: "Dio",
     photoUrl: "https://randomuser.me/api/portraits/women/6.jpg"
   },
   {
-    name: "Malik",
+    name: "Jansen",
     photoUrl: "https://randomuser.me/api/portraits/men/7.jpg"
   },
   {
-    name: "Nina",
+    name: "Lili",
     photoUrl: "https://randomuser.me/api/portraits/women/7.jpg"
   },
   {
-    name: "Oscar",
+    name: "Gibran",
     photoUrl: "https://randomuser.me/api/portraits/men/8.jpg"
   },
   {
-    name: "Putri",
+    name: "Reza",
     photoUrl: "https://randomuser.me/api/portraits/women/8.jpg"
   },
   {
-    name: "Qowi",
+    name: "Farel",
     photoUrl: "https://randomuser.me/api/portraits/men/9.jpg"
   },
   {
-    name: "Rini",
+    name: "Yudha",
     photoUrl: "https://randomuser.me/api/portraits/women/9.jpg"
   },
   {
-    name: "Steven",
+    name: "Kadafi",
     photoUrl: "https://randomuser.me/api/portraits/men/10.jpg"
   },
   {
-    name: "Tari",
+    name: "Yongky",
     photoUrl: "https://randomuser.me/api/portraits/women/10.jpg"
   },
   {
-    name: "Umar",
+    name: "Imron",
     photoUrl: "https://randomuser.me/api/portraits/men/11.jpg"
   },
   {
-    name: "Vina",
+    name: "Syamsudin",
     photoUrl: "https://randomuser.me/api/portraits/women/11.jpg"
   },
   {
-    name: "Wawan",
+    name: "Aditya",
     photoUrl: "https://randomuser.me/api/portraits/men/12.jpg"
   },
   {
-    name: "Xena",
+    name: "Ahtur",
     photoUrl: "https://randomuser.me/api/portraits/women/12.jpg"
   },
   {
-    name: "Yusuf",
+    name: "Zaky",
     photoUrl: "https://randomuser.me/api/portraits/men/13.jpg"
   },
   {
-    name: "Zahra",
+    name: "Oton",
     photoUrl: "https://randomuser.me/api/portraits/women/13.jpg"
   },
   {
-    name: "Andi",
+    name: "Dino",
     photoUrl: "https://randomuser.me/api/portraits/men/14.jpg"
   },
   {
-    name: "Bunga",
+    name: "Rajan",
     photoUrl: "https://randomuser.me/api/portraits/women/14.jpg"
   },
   {
-    name: "Candra",
+    name: "Rizal",
     photoUrl: "https://randomuser.me/api/portraits/men/15.jpg"
   },
   {
-    name: "Dinda",
+    name: "Herman",
     photoUrl: "https://randomuser.me/api/portraits/women/15.jpg"
   },
   {
-    name: "Fajar",
+    name: "Salis",
     photoUrl: "https://randomuser.me/api/portraits/men/16.jpg"
   },
   {
-    name: "Gita",
+    name: "Jose",
     photoUrl: "https://randomuser.me/api/portraits/women/16.jpg"
   },
   {
-    name: "Hendri",
+    name: "Silvia",
     photoUrl: "https://randomuser.me/api/portraits/men/17.jpg"
   },
   {
-    name: "Indah",
+    name: "Siti",
     photoUrl: "https://randomuser.me/api/portraits/women/17.jpg"
   },
   {
-    name: "Joko",
+    name: "Soni",
     photoUrl: "https://randomuser.me/api/portraits/men/18.jpg"
   },
   {
-    name: "Kirana",
+    name: "Yosi",
     photoUrl: "https://randomuser.me/api/portraits/women/18.jpg"
   },
   {
-    name: "Leo",
+    name: "Ucup",
     photoUrl: "https://randomuser.me/api/portraits/men/19.jpg"
   }
 ];
