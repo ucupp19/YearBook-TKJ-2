@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import PPImage from "../data/gambar/PP.png";
+import PPImage from "../data/gambar/TEACHER.png";
 
 const TeacherSection = () => {
   return (
     <section id="teacher" className="py-24 bg-white px-4">
-      <div className="container mx-auto">
+      <div className="container mx-auto select-none">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }} // Controls animation while in view
@@ -24,14 +24,19 @@ const TeacherSection = () => {
             className="flex-1"
           >
             <h3 className="text-3xl font-heading font-bold text-black mb-4">Mrs. Fitri Ainun Rosita</h3>
-            <p className="text-gray-800 mb-6 text-lg">
+            <p className="text-gray-800 mb-9 text-justify text-lg" >
               Beliau mengajar kami selama 3 tahun, menggabungkan teori dengan praktik untuk mengasah
-              keterampilan pemecahan masalah. Pendekatannya mempersiapkan kami menghadapi tantangan
+              keterampilan pemecahan masalah. 
+              Pendekatannya mempersiapkan kami menghadapi tantangan
               dunia teknologi yang terus berkembang, sehingga kami siap berkontribusi di industri.
             </p>
-            <p className="text-gray-600 mb-8">
-              Beliau sangat baik, selalu sabar, perhatian, dan tulus dalam membimbing kami.
-              Dengan kebaikan hatinya, beliau tidak hanya mengajarkan ilmu, tetapi juga memberikan inspirasi untuk terus belajar dan berkembang.
+            <p className="text-gray-600 mb-6 text-justify text-lg">
+              Selain itu, beliau juga mengajarkan kami tentang pentingnya etika dan tanggung jawab
+              dalam dunia teknologi.
+              Dengan pengetahuan dan pengalaman yang luas, beliau selalu memberikan bimbingan
+              yang berharga kepada kami.
+              Kami sangat beruntung memiliki beliau sebagai guru kami.
+            
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm">Baik Hati</span>
