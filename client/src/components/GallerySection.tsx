@@ -97,7 +97,7 @@ const GallerySection = () => {
 
   return (
     <section id="gallery" className="py-20 bg-white px-4">
-      <div className="container mx-auto">
+      <div className="container mx-auto select-none">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const GallerySection = () => {
       {/* Modal for enlarged image */}
       {selectedImageUrl && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 select-none"
           onClick={closeModal}
         >
           <div
@@ -142,7 +142,7 @@ const GallerySection = () => {
           >
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300"
+              className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300 select-none"
               aria-label="Close"
             >
               &times;

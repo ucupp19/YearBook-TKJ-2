@@ -82,7 +82,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-full"> {/* Use h-full to center content */}
           <div
-            className="text-xl font-heading font-bold bg-gradient-to-r from-gray-200 to-white text-transparent bg-clip-text"
+            className="md:text-lg xl=text-xl font-heading font-bold bg-gradient-to-r from-gray-200 to-white text-transparent bg-clip-text"
             style={{
               height: "30px", // Fixed height for the text
               display: "flex",

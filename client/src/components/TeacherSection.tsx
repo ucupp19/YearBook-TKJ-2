@@ -3,7 +3,7 @@ import PPImage from "../data/gambar/TEACHER.png";
 
 const TeacherSection = () => {
   return (
-    <section id="teacher" className="py-24 bg-white px-4">
+    <section id="teacher" className="min-h-screen flex items-center py-24 bg-white px-4">
       <div className="container mx-auto select-none">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

@@ -50,7 +50,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="w-full aspect-[16/9 md:aspect-auto min-h-[500px] md:min-h-screen pt-24 flex items-center justify-center bg-black text-white px-4 relative overflow-hidden"
+      className="min-h-screen pt-24 flex items-center justify-center bg-black text-white px-4 relative overflow-hidden"
     >
       <div ref={particlesContainerRef} className="particles-container"></div>
       

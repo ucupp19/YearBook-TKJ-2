@@ -21,7 +21,7 @@ const StudentSection = () => {
       </div>
 
       {/* Foreground content */}
-      <div className="relative z-10 container mx-auto">
+      <div className="relative z-10 container mx-auto select-none">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ const StudentSection = () => {
           The Students
         </motion.h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center select-none">
           {students.map((student, index) => (
             <motion.div
               key={index}
@@ -40,7 +40,7 @@ const StudentSection = () => {
               transition={{ duration: 0.5, delay: (index % 6) * 0.1 }}
               className="text-center mb-8"
             >
-              <div className="bg-white p-2 rounded-lg shadow-md mb-3 w-full h-40 overflow-hidden border border-black-200 hover:border-black-400 transition-all duration-300 hover:shadow-lg">
+              <div className="bg-white p-2 rounded-lg shadow-md mb-3 w-full h-40 overflow-hidden border border-black-200 hover:border-black-400 transition-all duration-300 hover:shadow-lg select-none">
                 <img
                   src={student.photoUrl}
                   alt={`${student.name}'s photo`}
