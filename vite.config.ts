@@ -3,7 +3,10 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
+
+
 export default defineConfig({
+  assetsInclude: ['**/*.PNG'], // Case-sensitive!
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -29,3 +32,5 @@ export default defineConfig({
     emptyOutDir: true,
   },
 });
+
+

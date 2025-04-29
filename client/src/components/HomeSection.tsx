@@ -60,7 +60,7 @@ const HomeSection = () => {
   initial={{ opacity: 0, y: -20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
-  className="flex items-center justify-center text-4xl sm:text-5xl md:text-7xl font-heading font-bold mb-6 min-h-[150px] sm:min-h-[200px] md:min-h-[400px]"
+  className="flex items-center justify-center text-4xl px-8 sm:text-5xl md:text-7xl font-heading font-bold mb-6 min-h-[150px] sm:min-h-[200px] md:min-h-[400px] "
 
 >
   <TextPressure
@@ -96,7 +96,7 @@ const HomeSection = () => {
             const gallerySection = document.getElementById("gallery");
             if (gallerySection) gallerySection.scrollIntoView({ behavior: "smooth" });
           }}
-          className="inline-block bg-white hover:bg-gray-200 text-black py-3 px-8 rounded-full font-semibold transition duration-300 hover:scale-105 shadow-lg select-none"
+          className="inline-block bg-white hover:bg-gray-200 text-black py-3 px-8 m-4 rounded-full font-semibold transition duration-300 hover:scale-105 shadow-lg select-none"
         >
           View Our Gallery
         </motion.button>
