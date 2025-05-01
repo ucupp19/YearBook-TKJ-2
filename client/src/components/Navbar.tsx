@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   const [displayedText, setDisplayedText] = useState(""); // To store the current text
-  const texts = ["THE JOURNEY", "XII - TKJ 2"]; // List of texts to loop through
+  const texts = ["XII - TKJ 2","STUDENT'S"]; // List of texts to loop through
   const typingSpeed = 100; // ms per character
   const erasingSpeed = 50; // ms per character
   const delayAfterTyping = 1200; // 1 second delay after typing full text
@@ -82,7 +82,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-full"> {/* Use h-full to center content */}
           <div
-            className="md:text-lg xl=text-xl font-heading font-bold bg-gradient-to-r from-gray-200 to-white text-transparent bg-clip-text"
+            className="text-sm lg:text-lg font-heading font-bold bg-gradient-to-r from-gray-200 to-white text-transparent bg-clip-text"
             style={{
               height: "30px", // Fixed height for the text
               display: "flex",
