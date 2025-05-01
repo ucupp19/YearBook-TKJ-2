@@ -2,23 +2,21 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { fileURLToPath } from "url";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default async function () {
   const plugins = [
     react(),
-    runtimeErrorOverlay(),
   ];
 
   if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
-    const { cartographer } = await import("@replit/vite-plugin-cartographer");
-    plugins.push(cartographer());
+    // Removed replit vite-plugin-cartographer import and usage
   }
 
   return defineConfig({
-    plugins,
+    base: "/yearbook-tkj2",
+    plugins: plugins,
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "client", "src"),
