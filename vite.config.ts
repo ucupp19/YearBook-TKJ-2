@@ -25,6 +25,9 @@ export default async function () {
       },
     },
     root: path.resolve(__dirname, "client"),
+    server: {
+      host: "192.168.0.2"
+    },
     build: {
       outDir: path.resolve(__dirname, "dist/public"),
       emptyOutDir: true,

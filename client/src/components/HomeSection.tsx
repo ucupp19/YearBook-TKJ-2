@@ -12,7 +12,7 @@ const HomeSection = () => {
       container.innerHTML = ''; // Clear any existing particles
       
       // Number of particles based on screen size
-      const particleCount = window.innerWidth < 768 ? 30 : 60;
+      const particleCount = window.innerWidth < 768 ? 10 : 60;
       
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -60,7 +60,7 @@ const HomeSection = () => {
   initial={{ opacity: 0, y: -20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
-  className="flex items-center justify-center text-4xl px-8 sm:text-5xl md:text-7xl font-heading font-bold mb-6 min-h-[150px] sm:min-h-[200px] md:min-h-[400px] "
+  className="flex items-center justify-center text-4xl px-8 sm:text-5xl md:text-7xl font-heading font-bold mb-10 min-h-[150px] sm:min-h-[200px] md:min-h-[400px] "
 
 >
   <TextPressure
@@ -82,7 +82,7 @@ const HomeSection = () => {
           animate={{ opacity: 1 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300 select-none"
+          className="text-sm w-60 lg:text-2xl lg:w-full mx-auto mb-10 text-gray-300 select-none"
         >
           Welcome to our class showcase. We are a Computer and Network Engineering students.
         </motion.p>
@@ -96,7 +96,7 @@ const HomeSection = () => {
             const gallerySection = document.getElementById("gallery");
             if (gallerySection) gallerySection.scrollIntoView({ behavior: "smooth" });
           }}
-          className="inline-block bg-white hover:bg-gray-200 text-black py-3 px-8 m-4 rounded-full font-semibold transition duration-300 hover:scale-105 shadow-lg select-none"
+          className="inline-block bg-white hover:bg-gray-200 text-black text-sm py-2 px-4 m-2 lg:text-xl lg:py-3 lg:px-8 lg:m-4 rounded-full font-semibold transition duration-300 hover:scale-105 shadow-lg select-none"
         >
           View Our Gallery
         </motion.button>

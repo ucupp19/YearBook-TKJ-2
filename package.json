@@ -1,6 +1,6 @@
 {
   "name": "yearbook",
-  "homepage": "https://ucupp19.github.io/yearbook-tkj2",
+  "homepage": "https://ucupp19.github.io/yearbook-tkj2/",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "start": "vite preview",
     "check": "tsc",
     "db:push": "drizzle-kit push",
-    "predeploy": "vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist/public"
   },
   "dependencies": {
